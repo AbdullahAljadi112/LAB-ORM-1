@@ -8,7 +8,7 @@
     <p>Share your thoughts with the world.</p>
 
     <div class="card">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
 
             <label for="title">Post Title</label>
@@ -29,6 +29,14 @@
                 placeholder="Write your post here..."
                 required
             ></textarea>
+
+            <label for="poster">Post Image</label>
+            <input
+                type="file"
+                id="poster"
+                name="poster"
+                accept="image/*"
+            >
 
             <button type="submit" class="btn">
                 Publish Post
